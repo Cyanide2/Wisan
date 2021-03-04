@@ -1,0 +1,7 @@
+<Project>
+  <Import Project="..\Directory.Build.props" />
+  <PropertyGroup>	
+    <StrongNameKeyId>Microsoft</StrongNameKeyId>
+    <PackageVersion>5.0.1</PackageVersion>
+  </PropertyGroup>
+</Project>
