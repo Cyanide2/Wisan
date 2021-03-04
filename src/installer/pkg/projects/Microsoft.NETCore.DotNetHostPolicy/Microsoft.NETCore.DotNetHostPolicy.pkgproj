@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionProp>HostPolicyVersion</VersionProp>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Dependency Include="Microsoft.NETCore.DotNetHostResolver" VersionProp="HostResolverVersion" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(PackageTargetRuntime)' != ''">
+    <NativeBinary Include="$(DotNetHostBinDir)/$(LibPrefix)hostpolicy$(LibSuffix)"/>
+    <File Include="@(NativeBinary)">
+      <TargetPath>runtimes/$(PackageTargetRuntime)/native</TargetPath>
+      <IsNative>true</IsNative>
+    </File>
+  </ItemGroup>
+</Project>
